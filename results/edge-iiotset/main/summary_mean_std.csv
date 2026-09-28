@@ -1,0 +1,17 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,
+random,strict,CNN1D,42.11,8.77,61.26,2.81,0.31,0.08,50.08,13.95,76.11,4.06
+random,strict,FTTransformer,56.9,14.61,68.92,2.51,0.38,0.1,62.92,17.52,76.07,4.05
+random,strict,LightGBM,61.59,12.23,77.23,0.44,0.4,0.15,70.5,15.92,72.21,19.36
+random,strict,MLP,54.2,10.24,67.23,1.32,0.37,0.08,59.44,11.72,72.46,18.57
+random,strict,PALT,52.12,12.22,68.54,2.75,0.36,0.06,58.68,16.97,68.9,16.35
+random,strict,PALT-KD,51.93,13.42,68.13,1.66,0.34,0.18,57.34,15.68,71.74,19.2
+random,strict,PALT-Teacher,53.32,15.03,68.54,1.58,0.39,0.11,58.94,15.92,65.09,23.59
+temporal,strict,CNN1D,64.34,2.59,62.35,2.2,0.92,0.01,68.48,2.77,0.25,0.28
+temporal,strict,FTTransformer,67.14,3.45,64.24,3.35,0.94,0.01,75.35,4.6,0.65,0.11
+temporal,strict,LightGBM,78.77,0.44,77.89,0.28,0.97,0.0,83.37,0.69,0.05,0.0
+temporal,strict,MLP,61.72,5.53,59.97,5.19,0.93,0.01,71.65,5.13,0.31,0.35
+temporal,strict,PALT,69.26,6.06,66.74,5.34,0.94,0.02,76.84,6.84,0.17,0.15
+temporal,strict,PALT-KD,70.35,2.61,68.31,2.15,0.94,0.02,76.26,4.74,0.06,0.01
+temporal,strict,PALT-Teacher,71.59,3.63,69.63,3.48,0.95,0.02,77.32,4.19,0.06,0.01

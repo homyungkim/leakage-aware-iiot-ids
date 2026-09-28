@@ -1,0 +1,13 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,macro_f1_novel,macro_f1_novel,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,,,
+random,strict,LightGBM,63.43,,77.32,,,,0.39,,69.92,,81.96,
+random,strict,MLP-PLR,63.44,,74.28,,,,0.39,,68.83,,81.98,
+random,strict,PALT,49.27,,66.68,,,,0.32,,51.95,,82.0,
+random,strict,PALT-PLR,65.59,,74.8,,,,0.84,,73.05,,0.06,
+random,strict,RandomForest,68.89,,81.36,,,,0.84,,71.75,,0.02,
+random,strict,XGBoost,76.37,,81.09,,,,0.88,,78.22,,0.03,
+random,strict-noseq,MLP-PLR,24.11,14.39,44.83,1.22,,,0.31,0.25,31.58,11.13,67.86,54.08
+random,strict-noseq,PALT-PLR,21.29,14.28,44.93,1.28,,,0.27,0.28,28.38,14.77,67.1,55.39
+random,strict-noseq,RandomForest,22.07,10.79,45.23,0.3,,,0.34,0.19,27.88,7.7,35.16,50.38
+random,strict-noseq,XGBoost,20.17,8.78,44.73,0.94,,,0.19,0.07,29.51,10.52,98.0,1.22

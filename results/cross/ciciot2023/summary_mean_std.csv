@@ -1,0 +1,11 @@
+,,macro_f1_unique,macro_f1_unique,macro_f1_records,macro_f1_records,mcc,mcc,normal_fpr,normal_fpr
+,,mean,std,mean,std,mean,std,mean,std
+setting,model,,,,,,,,
+common,FTTransformer,65.5,0.21,65.5,0.21,0.74,0.0,29.33,3.07
+common,LightGBM,85.83,0.99,85.83,0.99,0.93,0.0,14.28,0.73
+common,MLP,67.75,0.29,67.75,0.29,0.77,0.0,26.5,0.64
+common,PALT,69.82,0.41,69.82,0.41,0.79,0.01,27.94,0.52
+grouped,FTTransformer,65.73,0.23,65.73,0.23,0.74,0.0,30.46,1.42
+grouped,LightGBM,84.96,0.13,84.96,0.13,0.93,0.0,15.18,0.77
+grouped,MLP,67.59,0.23,67.59,0.23,0.76,0.0,26.69,0.69
+grouped,PALT,69.69,0.33,69.69,0.33,0.78,0.01,27.71,0.3

@@ -1,0 +1,52 @@
+{
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "gpu": "Tesla T4",
+  "cpu": "x86_64",
+  "cpu_count": 4,
+  "cfg": {
+    "input_root": "/kaggle/input",
+    "out_dir": "/kaggle/working/results",
+    "label_col": null,
+    "per_class_cap": 30000,
+    "chunk_rows": 2000000,
+    "probe_rows": 400000,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "models": [
+      "LightGBM",
+      "MLP",
+      "FTTransformer",
+      "PALT"
+    ],
+    "settings": [
+      "common",
+      "grouped",
+      "strict"
+    ],
+    "epochs": 30,
+    "batch_size": 2048,
+    "lr": 0.001,
+    "lr_teacher": 0.0005,
+    "weight_decay": 0.0001,
+    "patience": 6,
+    "clip": 5.0,
+    "d_student": 32,
+    "d_teacher": 128,
+    "heads": 4,
+    "blocks_student": 2,
+    "blocks_teacher": 4,
+    "kd_T": 4.0,
+    "kd_alpha": 0.5,
+    "cb_beta": 0.9999,
+    "focal_gamma": 2.0,
+    "cat_vocab": 64
+  },
+  "dataset": "ciciot2023",
+  "stage": "bench",
+  "strict_extra": []
+}

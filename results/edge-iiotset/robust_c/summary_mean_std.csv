@@ -1,0 +1,7 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,macro_f1_novel,macro_f1_novel,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,,,
+random,strict,PALT-PLR,59.3,17.76,73.48,3.21,,,0.56,0.19,68.89,20.67,30.8,17.28
+random,strict,PALT-PLR-RandGroup,60.48,10.11,75.26,0.53,,,0.39,0.07,69.61,15.55,71.98,18.4
+temporal,strict,PALT-PLR,78.36,1.84,74.79,2.12,,,0.97,0.0,85.14,0.69,0.05,0.01
+temporal,strict,PALT-PLR-RandGroup,74.95,4.95,71.6,4.76,,,0.96,0.02,84.28,3.32,0.29,0.26

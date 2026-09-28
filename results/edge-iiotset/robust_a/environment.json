@@ -1,0 +1,100 @@
+{
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "gpu": "Tesla T4",
+  "cpu": "x86_64",
+  "cpu_count": 4,
+  "cfg": {
+    "data_csv": "/kaggle/input/datasets/mohamedamineferrag/edgeiiotset-cyber-security-dataset-of-iot-iiot/Edge-IIoTset dataset/Selected dataset for ML and DL/DNN-EdgeIIoT-dataset.csv",
+    "out_dir": "/kaggle/working/results",
+    "max_rows": null,
+    "epochs": 40,
+    "batch_size": 2048,
+    "lr": 0.001,
+    "lr_teacher": 0.0005,
+    "weight_decay": 0.0001,
+    "patience": 8,
+    "clip": 5.0,
+    "d_student": 32,
+    "d_teacher": 128,
+    "heads": 4,
+    "blocks_student": 2,
+    "blocks_teacher": 4,
+    "kd_T": 4.0,
+    "kd_alpha": 0.5,
+    "cb_beta": 0.9999,
+    "focal_gamma": 2.0,
+    "cat_vocab": 64,
+    "latency_iters": 2000,
+    "latency_threads": [
+      1,
+      2
+    ],
+    "models": [
+      "LightGBM",
+      "MLP",
+      "CNN1D",
+      "FTTransformer",
+      "PALT-Teacher",
+      "PALT",
+      "PALT-KD"
+    ],
+    "runs": [
+      {
+        "mode": "session",
+        "fset": "strict",
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "models": [
+          "LightGBM",
+          "MLP",
+          "FTTransformer",
+          "PALT"
+        ]
+      },
+      {
+        "mode": "random",
+        "fset": "strict",
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "models": [
+          "LightGBM",
+          "PALT"
+        ],
+        "weighted": true
+      },
+      {
+        "mode": "random",
+        "fset": "strict-noseq",
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "models": [
+          "LightGBM",
+          "MLP",
+          "FTTransformer",
+          "PALT"
+        ]
+      }
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "export_seed": 0
+  }
+}

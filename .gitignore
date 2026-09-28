@@ -1,0 +1,17 @@
+# Datasets are not redistributed
+*.csv
+!results/**/*.csv
+!analysis/*.csv
+data/
+datasets/
+# benchmark inputs are real test records exported from the dataset
+bench_inputs*.npz
+edge_bench/models/
+edge_bench/results/
+# run outputs
+/results_local/
+*.zip
+__pycache__/
+.ipynb_checkpoints/
+# CICIoT2023 IAT evidence: the sampled records are dataset content
+iat_sample*

@@ -1,0 +1,7 @@
+,,macro_f1_unique,macro_f1_unique,macro_f1_records,macro_f1_records,mcc,mcc,normal_fpr,normal_fpr
+,,mean,std,mean,std,mean,std,mean,std
+setting,model,,,,,,,,
+strict,FTTransformer,66.2,0.11,66.14,0.1,0.75,0.0,28.63,1.66
+strict,LightGBM,71.14,0.15,71.08,0.15,0.8,0.0,26.45,0.6
+strict,MLP,67.78,0.49,67.72,0.48,0.77,0.01,24.91,0.57
+strict,PALT,69.02,0.97,68.99,1.0,0.77,0.01,28.97,1.5

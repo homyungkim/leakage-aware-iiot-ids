@@ -1,0 +1,2190 @@
+{
+  "dataset": "xiiotid",
+  "files": [
+    "datasets/munaalhawawreh/xiiotid-iiot-intrusion-dataset/X-IIoTID dataset.csv"
+  ],
+  "label_levels": {
+    "class1": {
+      "Normal": 421417,
+      "RDOS": 141261,
+      "Scanning_vulnerability": 52852,
+      "Generic_scanning": 50277,
+      "BruteForce": 47241,
+      "MQTT_cloud_broker_subscription": 23524,
+      "Discovering_resources": 23148,
+      "Exfiltration": 22134,
+      "insider_malcious": 17447,
+      "Modbus_register_reading": 5953,
+      "False_data_injection": 5094,
+      "C&C": 2863,
+      "Dictionary": 2572,
+      "TCP Relay": 2119,
+      "fuzzing": 1313,
+      "Reverse_shell": 1016,
+      "crypto-ransomware": 458,
+      "MitM": 117,
+      "Fake_notification": 28
+    },
+    "class2": {
+      "Normal": 421417,
+      "RDOS": 141261,
+      "Reconnaissance": 127590,
+      "Weaponization": 67260,
+      "Lateral _movement": 31596,
+      "Exfiltration": 22134,
+      "Tampering": 5122,
+      "C&C": 2863,
+      "Exploitation": 1133,
+      "crypto-ransomware": 458
+    },
+    "class3": {
+      "Normal": 421417,
+      "Attack": 399417
+    }
+  },
+  "label": "class1",
+  "normal_class": "Normal",
+  "n_classes": 19,
+  "rows_in_memory": 820834,
+  "features": [
+    "Date",
+    "Timestamp",
+    "Scr_IP",
+    "Scr_port",
+    "Des_IP",
+    "Des_port",
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "missed_bytes",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Bad_checksum",
+    "is_SYN_with_RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "anomaly_alert",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate",
+    "Scr_packts_ratio",
+    "Des_pkts_ratio",
+    "Scr_bytes_ratio",
+    "Des_bytes_ratio",
+    "Avg_user_time",
+    "Std_user_time",
+    "Avg_nice_time",
+    "Std_nice_time",
+    "Avg_system_time",
+    "Std_system_time",
+    "Avg_iowait_time",
+    "Std_iowait_time",
+    "Avg_ideal_time",
+    "Std_ideal_time",
+    "Avg_tps",
+    "Std_tps",
+    "Avg_rtps",
+    "Std_rtps",
+    "Avg_wtps",
+    "Std_wtps",
+    "Avg_ldavg_1",
+    "Std_ldavg_1",
+    "Avg_kbmemused",
+    "Std_kbmemused",
+    "Avg_num_Proc/s",
+    "Std_num_proc/s",
+    "Avg_num_cswch/s",
+    "std_num_cswch/s",
+    "OSSEC_alert",
+    "OSSEC_alert_level",
+    "Login_attempt",
+    "Succesful_login",
+    "File_activity",
+    "Process_activity",
+    "read_write_physical.process",
+    "is_privileged"
+  ],
+  "identifier_by_name": {
+    "Date": "time",
+    "Timestamp": "time",
+    "Scr_IP": "address",
+    "Scr_port": "port",
+    "Des_IP": "address",
+    "Des_port": "port"
+  },
+  "common_features": [
+    "Scr_port",
+    "Des_port",
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "missed_bytes",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Bad_checksum",
+    "is_SYN_with_RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "anomaly_alert",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate",
+    "Scr_packts_ratio",
+    "Des_pkts_ratio",
+    "Scr_bytes_ratio",
+    "Des_bytes_ratio",
+    "Avg_user_time",
+    "Std_user_time",
+    "Avg_nice_time",
+    "Std_nice_time",
+    "Avg_system_time",
+    "Std_system_time",
+    "Avg_iowait_time",
+    "Std_iowait_time",
+    "Avg_ideal_time",
+    "Std_ideal_time",
+    "Avg_tps",
+    "Std_tps",
+    "Avg_rtps",
+    "Std_rtps",
+    "Avg_wtps",
+    "Std_wtps",
+    "Avg_ldavg_1",
+    "Std_ldavg_1",
+    "Avg_kbmemused",
+    "Std_kbmemused",
+    "Avg_num_Proc/s",
+    "Std_num_proc/s",
+    "Avg_num_cswch/s",
+    "std_num_cswch/s",
+    "OSSEC_alert",
+    "OSSEC_alert_level",
+    "Login_attempt",
+    "Succesful_login",
+    "File_activity",
+    "Process_activity",
+    "read_write_physical.process",
+    "is_privileged"
+  ],
+  "class_counts_in_memory": {
+    "Normal": 421417,
+    "RDOS": 141261,
+    "Scanning_vulnerability": 52852,
+    "Generic_scanning": 50277,
+    "BruteForce": 47241,
+    "MQTT_cloud_broker_subscription": 23524,
+    "Discovering_resources": 23148,
+    "Exfiltration": 22134,
+    "insider_malcious": 17447,
+    "Modbus_register_reading": 5953,
+    "False_data_injection": 5094,
+    "C&C": 2863,
+    "Dictionary": 2572,
+    "TCP Relay": 2119,
+    "fuzzing": 1313,
+    "Reverse_shell": 1016,
+    "crypto-ransomware": 458,
+    "MitM": 117,
+    "Fake_notification": 28
+  },
+  "palt_groups": {
+    "conn": [
+      "Scr_port",
+      "Des_port",
+      "Protocol",
+      "Service",
+      "Duration",
+      "Conn_state",
+      "missed_bytes"
+    ],
+    "volume": [
+      "Scr_bytes",
+      "Des_bytes",
+      "Scr_pkts",
+      "Scr_ip_bytes",
+      "Des_pkts",
+      "Des_ip_bytes",
+      "total_bytes",
+      "total_packet",
+      "paket_rate",
+      "byte_rate",
+      "Scr_packts_ratio",
+      "Des_pkts_ratio",
+      "Scr_bytes_ratio",
+      "Des_bytes_ratio"
+    ],
+    "flags": [
+      "is_syn_only",
+      "Is_SYN_ACK",
+      "is_pure_ack",
+      "is_with_payload",
+      "FIN or RST",
+      "Bad_checksum",
+      "is_SYN_with_RST"
+    ],
+    "logs": [
+      "anomaly_alert",
+      "OSSEC_alert",
+      "OSSEC_alert_level",
+      "Login_attempt",
+      "Succesful_login",
+      "File_activity",
+      "is_privileged"
+    ],
+    "cpu": [
+      "Avg_user_time",
+      "Std_user_time",
+      "Avg_nice_time",
+      "Std_nice_time",
+      "Avg_system_time",
+      "Std_system_time",
+      "Avg_iowait_time",
+      "Std_iowait_time",
+      "Avg_ideal_time",
+      "Std_ideal_time",
+      "Avg_ldavg_1",
+      "Std_ldavg_1",
+      "Avg_num_Proc/s",
+      "Std_num_proc/s",
+      "Avg_num_cswch/s",
+      "std_num_cswch/s",
+      "Process_activity",
+      "read_write_physical.process"
+    ],
+    "io_mem": [
+      "Avg_tps",
+      "Std_tps",
+      "Avg_rtps",
+      "Std_rtps",
+      "Avg_wtps",
+      "Std_wtps",
+      "Avg_kbmemused",
+      "Std_kbmemused"
+    ]
+  },
+  "spelling_probe": {
+    "columns": [
+      "Date",
+      "Timestamp",
+      "Scr_IP",
+      "Scr_port",
+      "Des_IP",
+      "Des_port",
+      "Protocol",
+      "Duration",
+      "Scr_bytes",
+      "Des_bytes",
+      "missed_bytes",
+      "Scr_pkts",
+      "Scr_ip_bytes",
+      "Des_pkts",
+      "Des_ip_bytes",
+      "anomaly_alert",
+      "total_bytes",
+      "total_packet",
+      "paket_rate",
+      "byte_rate",
+      "Scr_packts_ratio",
+      "Des_pkts_ratio",
+      "Scr_bytes_ratio",
+      "Des_bytes_ratio",
+      "Avg_user_time",
+      "Std_user_time",
+      "Avg_nice_time",
+      "Std_nice_time",
+      "Avg_system_time",
+      "Std_system_time",
+      "Avg_iowait_time",
+      "Std_iowait_time",
+      "Avg_ideal_time",
+      "Std_ideal_time",
+      "Avg_tps",
+      "Std_tps",
+      "Avg_rtps",
+      "Std_rtps",
+      "Avg_wtps",
+      "Std_wtps",
+      "Avg_ldavg_1",
+      "Std_ldavg_1",
+      "Avg_kbmemused",
+      "Std_kbmemused",
+      "Avg_num_Proc/s",
+      "Std_num_proc/s",
+      "Avg_num_cswch/s",
+      "std_num_cswch/s"
+    ],
+    "spelling": {
+      "probe": "spelling_tokens",
+      "macro_f1": 0.21868967051643926,
+      "binary_acc": 0.5157666666666667,
+      "per_class_f1": {
+        "BruteForce": 0.26622175765859935,
+        "C&C": 0.027664256523105942,
+        "Dictionary": 0.2644964394710071,
+        "Discovering_resources": 0.16943946762221654,
+        "Exfiltration": 0.009302325581395349,
+        "Fake_notification": 0.8571428571428571,
+        "False_data_injection": 0.045924225028702644,
+        "Generic_scanning": 0.2435793656634042,
+        "MQTT_cloud_broker_subscription": 0.08884243532793311,
+        "MitM": 0.0012530206748411349,
+        "Modbus_register_reading": 0.01937984496124031,
+        "Normal": 0.10586569828275989,
+        "RDOS": 0.7808199663808085,
+        "Reverse_shell": 0.012987012987012988,
+        "Scanning_vulnerability": 0.2119892231701841,
+        "TCP Relay": 0.0025940337224383916,
+        "crypto-ransomware": 0.9879518072289156,
+        "fuzzing": 0.005563282336578581,
+        "insider_malcious": 0.05408672004834567
+      }
+    },
+    "value_class": {
+      "probe": "value_classes",
+      "macro_f1": 0.24919080480304975,
+      "binary_acc": 0.5253166666666667,
+      "per_class_f1": {
+        "BruteForce": 0.2656809338521401,
+        "C&C": 0.031011826544021025,
+        "Dictionary": 0.25263157894736843,
+        "Discovering_resources": 0.20683517265930937,
+        "Exfiltration": 0.0103866128101558,
+        "Fake_notification": 0.8571428571428571,
+        "False_data_injection": 0.04372842347525892,
+        "Generic_scanning": 0.43937525688450474,
+        "MQTT_cloud_broker_subscription": 0.12928416485900218,
+        "MitM": 0.0022712524334847503,
+        "Modbus_register_reading": 0.02554833799907591,
+        "Normal": 0.1397807242743665,
+        "RDOS": 0.7997637330183107,
+        "Reverse_shell": 0.06397306397306397,
+        "Scanning_vulnerability": 0.4387755102040816,
+        "TCP Relay": 0.01705237515225335,
+        "crypto-ransomware": 0.9879518072289156,
+        "fuzzing": 0.007615700058582308,
+        "insider_malcious": 0.015815959741193385
+      }
+    },
+    "spelling_gain_macro_f1": -0.0305011342866105
+  },
+  "zero_spelling_by_class": {
+    "Date": {
+      "": {
+        "Fake_notification": 12,
+        "crypto-ransomware": 161
+      },
+      "?": {
+        "crypto-ransomware": 1
+      }
+    },
+    "Timestamp": {
+      "": {
+        "crypto-ransomware": 158
+      },
+      "?": {
+        "crypto-ransomware": 71
+      }
+    },
+    "Des_port": {
+      "0": {
+        "Normal": 326,
+        "Scanning_vulnerability": 9
+      },
+      "?": {
+        "crypto-ransomware": 71
+      }
+    },
+    "Scr_bytes": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 254,
+        "Dictionary": 496,
+        "Discovering_resources": 1466,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7609,
+        "MQTT_cloud_broker_subscription": 2267,
+        "MitM": 7,
+        "Modbus_register_reading": 601,
+        "Normal": 40897,
+        "RDOS": 31112,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 194,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "Exfiltration": 4,
+        "Fake_notification": 1,
+        "Generic_scanning": 17086,
+        "MQTT_cloud_broker_subscription": 6874,
+        "MitM": 12,
+        "Normal": 1655,
+        "Reverse_shell": 167,
+        "Scanning_vulnerability": 10758,
+        "TCP Relay": 30,
+        "fuzzing": 1
+      }
+    },
+    "Des_bytes": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 254,
+        "Dictionary": 496,
+        "Discovering_resources": 1466,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7609,
+        "MQTT_cloud_broker_subscription": 2267,
+        "MitM": 7,
+        "Modbus_register_reading": 601,
+        "Normal": 40897,
+        "RDOS": 31112,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 194,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "C&C": 395,
+        "Discovering_resources": 203,
+        "Exfiltration": 4,
+        "Fake_notification": 1,
+        "False_data_injection": 1,
+        "Generic_scanning": 17086,
+        "MQTT_cloud_broker_subscription": 6874,
+        "MitM": 12,
+        "Normal": 32806,
+        "RDOS": 17666,
+        "Reverse_shell": 130,
+        "Scanning_vulnerability": 10837,
+        "TCP Relay": 31,
+        "fuzzing": 1
+      }
+    },
+    "missed_bytes": {
+      "-": {
+        "crypto-ransomware": 71
+      },
+      "0": {
+        "BruteForce": 23189,
+        "C&C": 1385,
+        "Dictionary": 1226,
+        "Discovering_resources": 11350,
+        "Exfiltration": 10749,
+        "Fake_notification": 12,
+        "False_data_injection": 2507,
+        "Generic_scanning": 24695,
+        "MQTT_cloud_broker_subscription": 11479,
+        "MitM": 58,
+        "Modbus_register_reading": 2909,
+        "Normal": 204814,
+        "RDOS": 68857,
+        "Reverse_shell": 474,
+        "Scanning_vulnerability": 25727,
+        "TCP Relay": 1001,
+        "crypto-ransomware": 162,
+        "fuzzing": 628,
+        "insider_malcious": 8546
+      }
+    },
+    "Scr_pkts": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "Normal": 37
+      }
+    },
+    "Scr_ip_bytes": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "Normal": 37
+      }
+    },
+    "Des_pkts": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "C&C": 403,
+        "Discovering_resources": 383,
+        "Generic_scanning": 95,
+        "MitM": 19,
+        "Normal": 35171,
+        "RDOS": 48778,
+        "Scanning_vulnerability": 1,
+        "TCP Relay": 34
+      }
+    },
+    "Des_ip_bytes": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "C&C": 403,
+        "Discovering_resources": 383,
+        "Generic_scanning": 95,
+        "MitM": 19,
+        "Normal": 35171,
+        "RDOS": 48778,
+        "Scanning_vulnerability": 1,
+        "TCP Relay": 34
+      }
+    },
+    "byte_rate": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 254,
+        "Dictionary": 496,
+        "Discovering_resources": 1466,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7609,
+        "MQTT_cloud_broker_subscription": 2267,
+        "MitM": 7,
+        "Modbus_register_reading": 601,
+        "Normal": 40897,
+        "RDOS": 31112,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 194,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "?": {
+        "Normal": 1
+      }
+    },
+    "Scr_packts_ratio": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "Normal": 37
+      }
+    },
+    "Des_pkts_ratio": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 246,
+        "Dictionary": 496,
+        "Discovering_resources": 1286,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7528,
+        "MQTT_cloud_broker_subscription": 2267,
+        "Modbus_register_reading": 601,
+        "Normal": 37879,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 180,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "C&C": 403,
+        "Discovering_resources": 383,
+        "Generic_scanning": 95,
+        "MitM": 19,
+        "Normal": 35171,
+        "RDOS": 48778,
+        "Scanning_vulnerability": 1,
+        "TCP Relay": 34
+      }
+    },
+    "Scr_bytes_ratio": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 254,
+        "Dictionary": 496,
+        "Discovering_resources": 1466,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7609,
+        "MQTT_cloud_broker_subscription": 2267,
+        "MitM": 7,
+        "Modbus_register_reading": 601,
+        "Normal": 40898,
+        "RDOS": 31112,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 194,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "Normal": 5
+      }
+    },
+    "Des_bytes_ratio": {
+      "-": {
+        "BruteForce": 10482,
+        "C&C": 254,
+        "Dictionary": 496,
+        "Discovering_resources": 1466,
+        "Exfiltration": 2885,
+        "False_data_injection": 667,
+        "Generic_scanning": 7609,
+        "MQTT_cloud_broker_subscription": 2267,
+        "MitM": 7,
+        "Modbus_register_reading": 601,
+        "Normal": 40898,
+        "RDOS": 31112,
+        "Reverse_shell": 73,
+        "Scanning_vulnerability": 7268,
+        "TCP Relay": 194,
+        "crypto-ransomware": 226,
+        "fuzzing": 85,
+        "insider_malcious": 2478
+      },
+      "0": {
+        "C&C": 395,
+        "Discovering_resources": 203,
+        "Generic_scanning": 14,
+        "MitM": 12,
+        "Normal": 32185,
+        "RDOS": 17666,
+        "Scanning_vulnerability": 1,
+        "TCP Relay": 20
+      }
+    },
+    "Avg_user_time": {
+      "": {
+        "Normal": 1
+      },
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      }
+    },
+    "Avg_nice_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "Normal": 1
+      }
+    },
+    "Std_nice_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "Normal": 1
+      }
+    },
+    "Avg_system_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "?": {
+        "Normal": 1,
+        "fuzzing": 3
+      }
+    },
+    "Std_system_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "?": {
+        "Normal": 1,
+        "fuzzing": 3
+      }
+    },
+    "Avg_iowait_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "C&C": 2,
+        "False_data_injection": 1,
+        "Normal": 184
+      },
+      "?": {
+        "Normal": 1,
+        "fuzzing": 3
+      }
+    },
+    "Std_iowait_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "C&C": 2,
+        "False_data_injection": 1,
+        "Normal": 193,
+        "insider_malcious": 3
+      },
+      "?": {
+        "Normal": 1,
+        "fuzzing": 3
+      }
+    },
+    "Avg_ideal_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "Normal": 6,
+        "Reverse_shell": 3
+      }
+    },
+    "Std_ideal_time": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1,
+        "crypto-ransomware": 1
+      },
+      "0": {
+        "Normal": 6,
+        "Reverse_shell": 3
+      }
+    },
+    "Std_tps": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 50,
+        "RDOS": 106,
+        "Reverse_shell": 11,
+        "TCP Relay": 1
+      },
+      "0": {
+        "C&C": 3,
+        "Dictionary": 3,
+        "Discovering_resources": 35,
+        "Exfiltration": 39,
+        "False_data_injection": 8,
+        "Generic_scanning": 260,
+        "MQTT_cloud_broker_subscription": 47,
+        "Modbus_register_reading": 24,
+        "Normal": 938,
+        "RDOS": 4198,
+        "Reverse_shell": 2,
+        "Scanning_vulnerability": 29,
+        "TCP Relay": 5,
+        "insider_malcious": 22
+      }
+    },
+    "Avg_rtps": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 50,
+        "RDOS": 106,
+        "Reverse_shell": 11,
+        "TCP Relay": 1
+      },
+      "0": {
+        "BruteForce": 2445,
+        "C&C": 155,
+        "Dictionary": 143,
+        "Discovering_resources": 2022,
+        "Exfiltration": 1667,
+        "False_data_injection": 349,
+        "Generic_scanning": 6633,
+        "MQTT_cloud_broker_subscription": 2607,
+        "MitM": 4,
+        "Modbus_register_reading": 512,
+        "Normal": 34292,
+        "RDOS": 13951,
+        "Reverse_shell": 77,
+        "Scanning_vulnerability": 709,
+        "TCP Relay": 186,
+        "crypto-ransomware": 1,
+        "fuzzing": 118,
+        "insider_malcious": 1442
+      }
+    },
+    "Std_rtps": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 50,
+        "RDOS": 106,
+        "Reverse_shell": 11,
+        "TCP Relay": 1
+      },
+      "0": {
+        "BruteForce": 2445,
+        "C&C": 155,
+        "Dictionary": 143,
+        "Discovering_resources": 2022,
+        "Exfiltration": 1667,
+        "False_data_injection": 349,
+        "Generic_scanning": 6633,
+        "MQTT_cloud_broker_subscription": 2607,
+        "MitM": 4,
+        "Modbus_register_reading": 512,
+        "Normal": 34292,
+        "RDOS": 13951,
+        "Reverse_shell": 77,
+        "Scanning_vulnerability": 709,
+        "TCP Relay": 186,
+        "crypto-ransomware": 1,
+        "fuzzing": 118,
+        "insider_malcious": 1442
+      }
+    },
+    "Std_wtps": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 50,
+        "RDOS": 106,
+        "Reverse_shell": 11,
+        "TCP Relay": 1
+      },
+      "0": {
+        "C&C": 34,
+        "Dictionary": 20,
+        "Discovering_resources": 234,
+        "Exfiltration": 240,
+        "False_data_injection": 63,
+        "Generic_scanning": 398,
+        "MQTT_cloud_broker_subscription": 204,
+        "Modbus_register_reading": 83,
+        "Normal": 4465,
+        "RDOS": 9932,
+        "Reverse_shell": 15,
+        "Scanning_vulnerability": 42,
+        "TCP Relay": 20,
+        "crypto-ransomware": 1,
+        "fuzzing": 20,
+        "insider_malcious": 137
+      }
+    },
+    "Std_ldavg_1": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 65,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1
+      },
+      "0": {
+        "BruteForce": 379,
+        "C&C": 3,
+        "Dictionary": 2,
+        "Discovering_resources": 15,
+        "Exfiltration": 21,
+        "False_data_injection": 5,
+        "Generic_scanning": 2,
+        "MQTT_cloud_broker_subscription": 68,
+        "Modbus_register_reading": 16,
+        "Normal": 594,
+        "TCP Relay": 3,
+        "insider_malcious": 26
+      }
+    },
+    "Avg_kbmemused": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1
+      },
+      "?": {
+        "Normal": 1
+      }
+    },
+    "Std_kbmemused": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1
+      },
+      "?": {
+        "Normal": 1
+      }
+    },
+    "Avg_num_Proc/s": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1
+      },
+      "0": {
+        "C&C": 23,
+        "Dictionary": 55,
+        "Discovering_resources": 1379,
+        "Exfiltration": 2,
+        "False_data_injection": 9,
+        "MQTT_cloud_broker_subscription": 13,
+        "MitM": 18,
+        "Normal": 6098,
+        "RDOS": 56474,
+        "Reverse_shell": 9,
+        "TCP Relay": 123,
+        "fuzzing": 28
+      }
+    },
+    "Std_num_proc/s": {
+      "-": {
+        "C&C": 44,
+        "Fake_notification": 12,
+        "False_data_injection": 13,
+        "MQTT_cloud_broker_subscription": 6,
+        "Modbus_register_reading": 4,
+        "Normal": 44,
+        "RDOS": 106,
+        "Reverse_shell": 10,
+        "TCP Relay": 1
+      },
+      "0": {
+        "C&C": 38,
+        "Dictionary": 55,
+        "Discovering_resources": 2811,
+        "Exfiltration": 111,
+        "False_data_injection": 12,
+        "Generic_scanning": 283,
+        "MQTT_cloud_broker_subscription": 13,
+        "MitM": 18,
+        "Modbus_register_reading": 1,
+        "Normal": 11319,
+        "RDOS": 56474,
+        "Reverse_shell": 9,
+        "Scanning_vulnerability": 496,
+        "TCP Relay": 127,
+        "fuzzing": 66,
+        "insider_malcious": 32
+      }
+    }
+  },
+  "single_feature_probes": [
+    {
+      "probe": "Timestamp",
+      "macro_f1": 0.5859097961260908,
+      "binary_acc": 0.6317333333333334,
+      "kind": "time",
+      "distinct_ratio": 0.2667896310338022,
+      "distinct": 218990
+    },
+    {
+      "probe": "Des_ip_bytes",
+      "macro_f1": 0.456491974181618,
+      "binary_acc": 0.69345,
+      "kind": null,
+      "distinct_ratio": 0.06770431049396101,
+      "distinct": 55574
+    },
+    {
+      "probe": "total_bytes",
+      "macro_f1": 0.45098931777617135,
+      "binary_acc": 0.6807,
+      "kind": null,
+      "distinct_ratio": 0.07609821230602046,
+      "distinct": 62464
+    },
+    {
+      "probe": "Des_bytes",
+      "macro_f1": 0.4388638211640532,
+      "binary_acc": 0.7108583333333334,
+      "kind": null,
+      "distinct_ratio": 0.06322715676982191,
+      "distinct": 51899
+    },
+    {
+      "probe": "Date",
+      "macro_f1": 0.4262707627768209,
+      "binary_acc": 0.6167416666666666,
+      "kind": "time",
+      "distinct_ratio": 6.091365611073615e-05,
+      "distinct": 50
+    },
+    {
+      "probe": "Scr_ip_bytes",
+      "macro_f1": 0.4210449064891457,
+      "binary_acc": 0.6139916666666667,
+      "kind": null,
+      "distinct_ratio": 0.04004707407344238,
+      "distinct": 32872
+    },
+    {
+      "probe": "Scr_bytes",
+      "macro_f1": 0.41068852760538305,
+      "binary_acc": 0.7590333333333333,
+      "kind": null,
+      "distinct_ratio": 0.02564952231510878,
+      "distinct": 21054
+    },
+    {
+      "probe": "Des_bytes_ratio",
+      "macro_f1": 0.4105170676455002,
+      "binary_acc": 0.5826583333333333,
+      "kind": null,
+      "distinct_ratio": 0.0885879483549658,
+      "distinct": 72716
+    },
+    {
+      "probe": "Scr_bytes_ratio",
+      "macro_f1": 0.38997162266326346,
+      "binary_acc": 0.569125,
+      "kind": null,
+      "distinct_ratio": 0.0885879483549658,
+      "distinct": 72716
+    },
+    {
+      "probe": "Des_port",
+      "macro_f1": 0.34050701417296575,
+      "binary_acc": 0.5086833333333334,
+      "kind": "port",
+      "distinct_ratio": 0.007850551999551675,
+      "distinct": 6444
+    },
+    {
+      "probe": "Duration",
+      "macro_f1": 0.32961471134079445,
+      "binary_acc": 0.588575,
+      "kind": null,
+      "distinct_ratio": 0.40228231286715704,
+      "distinct": 330207
+    },
+    {
+      "probe": "Scr_packts_ratio",
+      "macro_f1": 0.3131715348535142,
+      "binary_acc": 0.49205,
+      "kind": null,
+      "distinct_ratio": 0.024359371078683387,
+      "distinct": 19995
+    },
+    {
+      "probe": "Des_pkts_ratio",
+      "macro_f1": 0.2962164244518546,
+      "binary_acc": 0.5197666666666667,
+      "kind": null,
+      "distinct_ratio": 0.024359371078683387,
+      "distinct": 19995
+    },
+    {
+      "probe": "total_packet",
+      "macro_f1": 0.28040498780692574,
+      "binary_acc": 0.49585833333333335,
+      "kind": null,
+      "distinct_ratio": 0.0026996932388278264,
+      "distinct": 2216
+    },
+    {
+      "probe": "paket_rate",
+      "macro_f1": 0.27754058053762237,
+      "binary_acc": 0.6374916666666667,
+      "kind": null,
+      "distinct_ratio": 0.3695668064432029,
+      "distinct": 303353
+    },
+    {
+      "probe": "Scr_IP",
+      "macro_f1": 0.24041672207115733,
+      "binary_acc": 0.890275,
+      "kind": "address",
+      "distinct_ratio": 4.385783239973003e-05,
+      "distinct": 36
+    },
+    {
+      "probe": "byte_rate",
+      "macro_f1": 0.23002842105634191,
+      "binary_acc": 0.5971,
+      "kind": null,
+      "distinct_ratio": 0.4137962121452084,
+      "distinct": 339658
+    },
+    {
+      "probe": "Service",
+      "macro_f1": 0.2105355538340774,
+      "binary_acc": 0.4916583333333333,
+      "kind": null,
+      "distinct_ratio": 2.071064307765029e-05,
+      "distinct": 17
+    },
+    {
+      "probe": "Des_pkts",
+      "macro_f1": 0.20987978958547338,
+      "binary_acc": 0.51255,
+      "kind": null,
+      "distinct_ratio": 0.001895632978166109,
+      "distinct": 1556
+    },
+    {
+      "probe": "Avg_system_time",
+      "macro_f1": 0.20385407849721532,
+      "binary_acc": 0.4891666666666667,
+      "kind": null,
+      "distinct_ratio": 0.006303345134338978,
+      "distinct": 5174
+    },
+    {
+      "probe": "Avg_num_cswch/s",
+      "macro_f1": 0.20007315601003622,
+      "binary_acc": 0.487675,
+      "kind": null,
+      "distinct_ratio": 0.01825704100950984,
+      "distinct": 14986
+    },
+    {
+      "probe": "Scr_pkts",
+      "macro_f1": 0.19838985648656352,
+      "binary_acc": 0.5001666666666666,
+      "kind": null,
+      "distinct_ratio": 0.0014753287510020296,
+      "distinct": 1211
+    },
+    {
+      "probe": "Des_IP",
+      "macro_f1": 0.1932959943956529,
+      "binary_acc": 0.6440666666666667,
+      "kind": "address",
+      "distinct_ratio": 0.00011695421973261342,
+      "distinct": 96
+    },
+    {
+      "probe": "Std_num_proc/s",
+      "macro_f1": 0.17569668958388515,
+      "binary_acc": 0.48918333333333336,
+      "kind": null,
+      "distinct_ratio": 0.0044454786229615245,
+      "distinct": 3649
+    },
+    {
+      "probe": "Avg_num_Proc/s",
+      "macro_f1": 0.1637154734952675,
+      "binary_acc": 0.5188416666666666,
+      "kind": null,
+      "distinct_ratio": 0.001292587782669821,
+      "distinct": 1061
+    },
+    {
+      "probe": "Avg_ideal_time",
+      "macro_f1": 0.16354911537539563,
+      "binary_acc": 0.4899,
+      "kind": null,
+      "distinct_ratio": 0.02400607187324112,
+      "distinct": 19705
+    },
+    {
+      "probe": "Avg_user_time",
+      "macro_f1": 0.1623700090369746,
+      "binary_acc": 0.490275,
+      "kind": null,
+      "distinct_ratio": 0.015392880899183026,
+      "distinct": 12635
+    },
+    {
+      "probe": "Avg_nice_time",
+      "macro_f1": 0.14370443677757277,
+      "binary_acc": 0.4880333333333333,
+      "kind": null,
+      "distinct_ratio": 0.005544360979199205,
+      "distinct": 4551
+    },
+    {
+      "probe": "std_num_cswch/s",
+      "macro_f1": 0.140715368212558,
+      "binary_acc": 0.48791666666666667,
+      "kind": null,
+      "distinct_ratio": 0.06284827382881314,
+      "distinct": 51588
+    },
+    {
+      "probe": "Std_user_time",
+      "macro_f1": 0.1348112706780923,
+      "binary_acc": 0.4900583333333333,
+      "kind": null,
+      "distinct_ratio": 0.06291893366990159,
+      "distinct": 51646
+    },
+    {
+      "probe": "Std_system_time",
+      "macro_f1": 0.13416522548648,
+      "binary_acc": 0.4881083333333333,
+      "kind": null,
+      "distinct_ratio": 0.061469188654466066,
+      "distinct": 50456
+    },
+    {
+      "probe": "Avg_ldavg_1",
+      "macro_f1": 0.13054793902360984,
+      "binary_acc": 0.48799166666666666,
+      "kind": null,
+      "distinct_ratio": 0.0034282205659122308,
+      "distinct": 2814
+    },
+    {
+      "probe": "Avg_kbmemused",
+      "macro_f1": 0.12619111577577802,
+      "binary_acc": 0.487975,
+      "kind": null,
+      "distinct_ratio": 0.03428707875161117,
+      "distinct": 28144
+    },
+    {
+      "probe": "Std_ideal_time",
+      "macro_f1": 0.11391154638271016,
+      "binary_acc": 0.4881083333333333,
+      "kind": null,
+      "distinct_ratio": 0.06301517724655654,
+      "distinct": 51725
+    },
+    {
+      "probe": "Std_iowait_time",
+      "macro_f1": 0.10679427502872893,
+      "binary_acc": 0.48744166666666666,
+      "kind": null,
+      "distinct_ratio": 0.037404639671358646,
+      "distinct": 30703
+    },
+    {
+      "probe": "Std_kbmemused",
+      "macro_f1": 0.10624641544051061,
+      "binary_acc": 0.4883166666666667,
+      "kind": null,
+      "distinct_ratio": 0.06276908607586917,
+      "distinct": 51523
+    },
+    {
+      "probe": "Std_nice_time",
+      "macro_f1": 0.10370412041219436,
+      "binary_acc": 0.487375,
+      "kind": null,
+      "distinct_ratio": 0.06157274186985432,
+      "distinct": 50541
+    },
+    {
+      "probe": "Avg_wtps",
+      "macro_f1": 0.09830913327402463,
+      "binary_acc": 0.48764166666666664,
+      "kind": null,
+      "distinct_ratio": 0.0024572568875070966,
+      "distinct": 2017
+    },
+    {
+      "probe": "Avg_iowait_time",
+      "macro_f1": 0.09759130634391469,
+      "binary_acc": 0.4875583333333333,
+      "kind": null,
+      "distinct_ratio": 0.012374000102334942,
+      "distinct": 10157
+    },
+    {
+      "probe": "Std_ldavg_1",
+      "macro_f1": 0.08797817958478543,
+      "binary_acc": 0.5052583333333334,
+      "kind": null,
+      "distinct_ratio": 0.004203042271640795,
+      "distinct": 3450
+    },
+    {
+      "probe": "Std_rtps",
+      "macro_f1": 0.08670683776976043,
+      "binary_acc": 0.4875833333333333,
+      "kind": null,
+      "distinct_ratio": 0.020091760331565213,
+      "distinct": 16492
+    },
+    {
+      "probe": "Avg_tps",
+      "macro_f1": 0.08610830601186781,
+      "binary_acc": 0.48785,
+      "kind": null,
+      "distinct_ratio": 0.004551468384594206,
+      "distinct": 3736
+    },
+    {
+      "probe": "Std_wtps",
+      "macro_f1": 0.08453093381388366,
+      "binary_acc": 0.48741666666666666,
+      "kind": null,
+      "distinct_ratio": 0.01355207021151658,
+      "distinct": 11124
+    },
+    {
+      "probe": "Scr_port",
+      "macro_f1": 0.08355337854821536,
+      "binary_acc": 0.569625,
+      "kind": "port",
+      "distinct_ratio": 0.07000197360245798,
+      "distinct": 57460
+    },
+    {
+      "probe": "Protocol",
+      "macro_f1": 0.07944813860316971,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 4.873092488858892e-06,
+      "distinct": 4
+    },
+    {
+      "probe": "Std_tps",
+      "macro_f1": 0.07502006116153462,
+      "binary_acc": 0.4874583333333333,
+      "kind": null,
+      "distinct_ratio": 0.026523024143736737,
+      "distinct": 21771
+    },
+    {
+      "probe": "Avg_rtps",
+      "macro_f1": 0.07398212884474971,
+      "binary_acc": 0.4875333333333333,
+      "kind": null,
+      "distinct_ratio": 0.002745987617471986,
+      "distinct": 2254
+    },
+    {
+      "probe": "anomaly_alert",
+      "macro_f1": 0.05280367737967439,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 3.6548193666441693e-06,
+      "distinct": 3
+    },
+    {
+      "probe": "OSSEC_alert_level",
+      "macro_f1": 0.039123380146355025,
+      "binary_acc": 0.48791666666666667,
+      "kind": null,
+      "distinct_ratio": 7.3096387332883386e-06,
+      "distinct": 6
+    },
+    {
+      "probe": "Bad_checksum",
+      "macro_f1": 0.03567879976260137,
+      "binary_acc": 0.5127416666666667,
+      "kind": null,
+      "distinct_ratio": 1.218273122214723e-06,
+      "distinct": 1
+    },
+    {
+      "probe": "is_SYN_with_RST",
+      "macro_f1": 0.03567879976260137,
+      "binary_acc": 0.5127416666666667,
+      "kind": null,
+      "distinct_ratio": 1.218273122214723e-06,
+      "distinct": 1
+    },
+    {
+      "probe": "is_with_payload",
+      "macro_f1": 0.03391395493092183,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "OSSEC_alert",
+      "macro_f1": 0.032299554933666604,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "Conn_state",
+      "macro_f1": 0.03161357210513613,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "Process_activity",
+      "macro_f1": 0.022276645384131002,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "is_privileged",
+      "macro_f1": 0.021968073854275738,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "Succesful_login",
+      "macro_f1": 0.021922473929426693,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "FIN or RST",
+      "macro_f1": 0.005935801286377743,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "is_syn_only",
+      "macro_f1": 0.00588655090095855,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "read_write_physical.process",
+      "macro_f1": 0.004169355631806035,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "File_activity",
+      "macro_f1": 0.004123393755497214,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "Login_attempt",
+      "macro_f1": 0.0035973113970290726,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "missed_bytes",
+      "macro_f1": 0.003023121974701659,
+      "binary_acc": 0.4875083333333333,
+      "kind": null,
+      "distinct_ratio": 0.000281421091231601,
+      "distinct": 231
+    },
+    {
+      "probe": "is_pure_ack",
+      "macro_f1": 0.0014065699871938706,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    },
+    {
+      "probe": "Is_SYN_ACK",
+      "macro_f1": 0.0009966970706318187,
+      "binary_acc": 0.48725833333333335,
+      "kind": null,
+      "distinct_ratio": 2.436546244429446e-06,
+      "distinct": 2
+    }
+  ],
+  "ceiling": {
+    "all_fields": {
+      "n_records": 820834,
+      "n_unique_vectors": 814612,
+      "unique_vector_label_pairs_by_class": {
+        "BruteForce": 47241,
+        "C&C": 2863,
+        "Dictionary": 2435,
+        "Discovering_resources": 23148,
+        "Exfiltration": 22134,
+        "Fake_notification": 28,
+        "False_data_injection": 5094,
+        "Generic_scanning": 50253,
+        "MQTT_cloud_broker_subscription": 23524,
+        "MitM": 117,
+        "Modbus_register_reading": 5953,
+        "Normal": 418253,
+        "RDOS": 141261,
+        "Reverse_shell": 1016,
+        "Scanning_vulnerability": 52825,
+        "TCP Relay": 2119,
+        "crypto-ransomware": 458,
+        "fuzzing": 1146,
+        "insider_malcious": 14744
+      },
+      "vectors_with_conflict": 0,
+      "records_in_conflicting_vectors_by_class": {},
+      "duplicate_share": 0.007580095366420014,
+      "ceiling_accuracy": 1.0,
+      "ceiling_recall_by_class": {
+        "BruteForce": 1.0,
+        "C&C": 1.0,
+        "Dictionary": 1.0,
+        "Discovering_resources": 1.0,
+        "Exfiltration": 1.0,
+        "Fake_notification": 1.0,
+        "False_data_injection": 1.0,
+        "Generic_scanning": 1.0,
+        "MQTT_cloud_broker_subscription": 1.0,
+        "MitM": 1.0,
+        "Modbus_register_reading": 1.0,
+        "Normal": 1.0,
+        "RDOS": 1.0,
+        "Reverse_shell": 1.0,
+        "Scanning_vulnerability": 1.0,
+        "TCP Relay": 1.0,
+        "crypto-ransomware": 1.0,
+        "fuzzing": 1.0,
+        "insider_malcious": 1.0
+      }
+    },
+    "common": {
+      "n_records": 820834,
+      "n_unique_vectors": 809403,
+      "unique_vector_label_pairs_by_class": {
+        "BruteForce": 47241,
+        "C&C": 2856,
+        "Dictionary": 2435,
+        "Discovering_resources": 23148,
+        "Exfiltration": 22134,
+        "Fake_notification": 28,
+        "False_data_injection": 5093,
+        "Generic_scanning": 50253,
+        "MQTT_cloud_broker_subscription": 20816,
+        "MitM": 117,
+        "Modbus_register_reading": 5953,
+        "Normal": 416324,
+        "RDOS": 140699,
+        "Reverse_shell": 1016,
+        "Scanning_vulnerability": 52825,
+        "TCP Relay": 2117,
+        "crypto-ransomware": 458,
+        "fuzzing": 1146,
+        "insider_malcious": 14744
+      },
+      "vectors_with_conflict": 0,
+      "records_in_conflicting_vectors_by_class": {},
+      "duplicate_share": 0.013926080060036483,
+      "ceiling_accuracy": 1.0,
+      "ceiling_recall_by_class": {
+        "BruteForce": 1.0,
+        "C&C": 1.0,
+        "Dictionary": 1.0,
+        "Discovering_resources": 1.0,
+        "Exfiltration": 1.0,
+        "Fake_notification": 1.0,
+        "False_data_injection": 1.0,
+        "Generic_scanning": 1.0,
+        "MQTT_cloud_broker_subscription": 1.0,
+        "MitM": 1.0,
+        "Modbus_register_reading": 1.0,
+        "Normal": 1.0,
+        "RDOS": 1.0,
+        "Reverse_shell": 1.0,
+        "Scanning_vulnerability": 1.0,
+        "TCP Relay": 1.0,
+        "crypto-ransomware": 1.0,
+        "fuzzing": 1.0,
+        "insider_malcious": 1.0
+      }
+    },
+    "common_minus_ports_sessions": {
+      "n_records": 820834,
+      "n_unique_vectors": 701145,
+      "unique_vector_label_pairs_by_class": {
+        "BruteForce": 46990,
+        "C&C": 2849,
+        "Dictionary": 2093,
+        "Discovering_resources": 22753,
+        "Exfiltration": 22133,
+        "Fake_notification": 28,
+        "False_data_injection": 5073,
+        "Generic_scanning": 37946,
+        "MQTT_cloud_broker_subscription": 20806,
+        "MitM": 112,
+        "Modbus_register_reading": 5953,
+        "Normal": 406194,
+        "RDOS": 77134,
+        "Reverse_shell": 1015,
+        "Scanning_vulnerability": 31615,
+        "TCP Relay": 2116,
+        "crypto-ransomware": 458,
+        "fuzzing": 1145,
+        "insider_malcious": 14736
+      },
+      "vectors_with_conflict": 4,
+      "records_in_conflicting_vectors_by_class": {
+        "C&C": 1,
+        "Discovering_resources": 2,
+        "Generic_scanning": 1,
+        "Normal": 4
+      },
+      "duplicate_share": 0.145813891724758,
+      "ceiling_accuracy": 0.9999951269075111,
+      "ceiling_recall_by_class": {
+        "BruteForce": 1.0,
+        "C&C": 1.0,
+        "Dictionary": 1.0,
+        "Discovering_resources": 1.0,
+        "Exfiltration": 1.0,
+        "Fake_notification": 1.0,
+        "False_data_injection": 1.0,
+        "Generic_scanning": 1.0,
+        "MQTT_cloud_broker_subscription": 1.0,
+        "MitM": 1.0,
+        "Modbus_register_reading": 1.0,
+        "Normal": 0.9999905082139543,
+        "RDOS": 1.0,
+        "Reverse_shell": 1.0,
+        "Scanning_vulnerability": 1.0,
+        "TCP Relay": 1.0,
+        "crypto-ransomware": 1.0,
+        "fuzzing": 1.0,
+        "insider_malcious": 1.0
+      }
+    }
+  },
+  "record_split_overlap": {
+    "all_fields": {
+      "overall": 0.011881067304716912,
+      "by_class": {
+        "BruteForce": 0.0,
+        "C&C": 0.0,
+        "Dictionary": 0.07960186625194401,
+        "Discovering_resources": 0.0,
+        "Exfiltration": 0.0,
+        "Fake_notification": 0.0,
+        "False_data_injection": 0.0,
+        "Generic_scanning": 0.0007510392425960181,
+        "MQTT_cloud_broker_subscription": 0.0,
+        "MitM": 0.0,
+        "Modbus_register_reading": 0.0,
+        "Normal": 0.011822513092732379,
+        "RDOS": 0.0,
+        "Reverse_shell": 0.0,
+        "Scanning_vulnerability": 0.0008173768258533263,
+        "TCP Relay": 0.0,
+        "crypto-ransomware": 0.0,
+        "fuzzing": 0.2035034272658035,
+        "insider_malcious": 0.24171949332263426
+      }
+    },
+    "common": {
+      "overall": 0.02193772662633371,
+      "by_class": {
+        "BruteForce": 0.0,
+        "C&C": 0.00279423597624869,
+        "Dictionary": 0.07960186625194401,
+        "Discovering_resources": 0.0,
+        "Exfiltration": 0.0,
+        "Fake_notification": 0.0,
+        "False_data_injection": 0.00031409501374165687,
+        "Generic_scanning": 0.0007510392425960181,
+        "MQTT_cloud_broker_subscription": 0.1841863628634586,
+        "MitM": 0.0,
+        "Modbus_register_reading": 0.0,
+        "Normal": 0.01896519599351711,
+        "RDOS": 0.006365521977049576,
+        "Reverse_shell": 0.0,
+        "Scanning_vulnerability": 0.0008173768258533263,
+        "TCP Relay": 0.001510146295422369,
+        "crypto-ransomware": 0.0,
+        "fuzzing": 0.2035034272658035,
+        "insider_malcious": 0.24171949332263426
+      }
+    },
+    "common_minus_ports_sessions": {
+      "overall": 0.16696694749057736,
+      "by_class": {
+        "BruteForce": 0.008487542600707014,
+        "C&C": 0.0058678991267900795,
+        "Dictionary": 0.2716288592614121,
+        "Discovering_resources": 0.026025228961465353,
+        "Exfiltration": 7.228697930785218e-05,
+        "Fake_notification": 0.0,
+        "False_data_injection": 0.00590496615626227,
+        "Generic_scanning": 0.31984286146834406,
+        "MQTT_cloud_broker_subscription": 0.1848175480360483,
+        "MitM": 0.0629059829059829,
+        "Modbus_register_reading": 0.0,
+        "Normal": 0.055013525349321496,
+        "RDOS": 0.4544736339116954,
+        "Reverse_shell": 0.0015748031496062994,
+        "Scanning_vulnerability": 0.43482721371908806,
+        "TCP Relay": 0.002265219443133554,
+        "crypto-ransomware": 0.0,
+        "fuzzing": 0.20472201066260473,
+        "insider_malcious": 0.24222938040923944
+      }
+    }
+  },
+  "records_with_all_common_fields_empty_by_class": {},
+  "settings": {
+    "common": {
+      "split": "record",
+      "n_features": 61,
+      "features": [
+        "Scr_port",
+        "Des_port",
+        "Protocol",
+        "Service",
+        "Duration",
+        "Scr_bytes",
+        "Des_bytes",
+        "Conn_state",
+        "missed_bytes",
+        "is_syn_only",
+        "Is_SYN_ACK",
+        "is_pure_ack",
+        "is_with_payload",
+        "FIN or RST",
+        "Bad_checksum",
+        "is_SYN_with_RST",
+        "Scr_pkts",
+        "Scr_ip_bytes",
+        "Des_pkts",
+        "Des_ip_bytes",
+        "anomaly_alert",
+        "total_bytes",
+        "total_packet",
+        "paket_rate",
+        "byte_rate",
+        "Scr_packts_ratio",
+        "Des_pkts_ratio",
+        "Scr_bytes_ratio",
+        "Des_bytes_ratio",
+        "Avg_user_time",
+        "Std_user_time",
+        "Avg_nice_time",
+        "Std_nice_time",
+        "Avg_system_time",
+        "Std_system_time",
+        "Avg_iowait_time",
+        "Std_iowait_time",
+        "Avg_ideal_time",
+        "Std_ideal_time",
+        "Avg_tps",
+        "Std_tps",
+        "Avg_rtps",
+        "Std_rtps",
+        "Avg_wtps",
+        "Std_wtps",
+        "Avg_ldavg_1",
+        "Std_ldavg_1",
+        "Avg_kbmemused",
+        "Std_kbmemused",
+        "Avg_num_Proc/s",
+        "Std_num_proc/s",
+        "Avg_num_cswch/s",
+        "std_num_cswch/s",
+        "OSSEC_alert",
+        "OSSEC_alert_level",
+        "Login_attempt",
+        "Succesful_login",
+        "File_activity",
+        "Process_activity",
+        "read_write_physical.process",
+        "is_privileged"
+      ]
+    },
+    "grouped": {
+      "split": "grouped",
+      "n_features": 61,
+      "features": [
+        "Scr_port",
+        "Des_port",
+        "Protocol",
+        "Service",
+        "Duration",
+        "Scr_bytes",
+        "Des_bytes",
+        "Conn_state",
+        "missed_bytes",
+        "is_syn_only",
+        "Is_SYN_ACK",
+        "is_pure_ack",
+        "is_with_payload",
+        "FIN or RST",
+        "Bad_checksum",
+        "is_SYN_with_RST",
+        "Scr_pkts",
+        "Scr_ip_bytes",
+        "Des_pkts",
+        "Des_ip_bytes",
+        "anomaly_alert",
+        "total_bytes",
+        "total_packet",
+        "paket_rate",
+        "byte_rate",
+        "Scr_packts_ratio",
+        "Des_pkts_ratio",
+        "Scr_bytes_ratio",
+        "Des_bytes_ratio",
+        "Avg_user_time",
+        "Std_user_time",
+        "Avg_nice_time",
+        "Std_nice_time",
+        "Avg_system_time",
+        "Std_system_time",
+        "Avg_iowait_time",
+        "Std_iowait_time",
+        "Avg_ideal_time",
+        "Std_ideal_time",
+        "Avg_tps",
+        "Std_tps",
+        "Avg_rtps",
+        "Std_rtps",
+        "Avg_wtps",
+        "Std_wtps",
+        "Avg_ldavg_1",
+        "Std_ldavg_1",
+        "Avg_kbmemused",
+        "Std_kbmemused",
+        "Avg_num_Proc/s",
+        "Std_num_proc/s",
+        "Avg_num_cswch/s",
+        "std_num_cswch/s",
+        "OSSEC_alert",
+        "OSSEC_alert_level",
+        "Login_attempt",
+        "Succesful_login",
+        "File_activity",
+        "Process_activity",
+        "read_write_physical.process",
+        "is_privileged"
+      ]
+    },
+    "strict": {
+      "split": "grouped",
+      "n_features": 59,
+      "features": [
+        "Protocol",
+        "Service",
+        "Duration",
+        "Scr_bytes",
+        "Des_bytes",
+        "Conn_state",
+        "missed_bytes",
+        "is_syn_only",
+        "Is_SYN_ACK",
+        "is_pure_ack",
+        "is_with_payload",
+        "FIN or RST",
+        "Bad_checksum",
+        "is_SYN_with_RST",
+        "Scr_pkts",
+        "Scr_ip_bytes",
+        "Des_pkts",
+        "Des_ip_bytes",
+        "anomaly_alert",
+        "total_bytes",
+        "total_packet",
+        "paket_rate",
+        "byte_rate",
+        "Scr_packts_ratio",
+        "Des_pkts_ratio",
+        "Scr_bytes_ratio",
+        "Des_bytes_ratio",
+        "Avg_user_time",
+        "Std_user_time",
+        "Avg_nice_time",
+        "Std_nice_time",
+        "Avg_system_time",
+        "Std_system_time",
+        "Avg_iowait_time",
+        "Std_iowait_time",
+        "Avg_ideal_time",
+        "Std_ideal_time",
+        "Avg_tps",
+        "Std_tps",
+        "Avg_rtps",
+        "Std_rtps",
+        "Avg_wtps",
+        "Std_wtps",
+        "Avg_ldavg_1",
+        "Std_ldavg_1",
+        "Avg_kbmemused",
+        "Std_kbmemused",
+        "Avg_num_Proc/s",
+        "Std_num_proc/s",
+        "Avg_num_cswch/s",
+        "std_num_cswch/s",
+        "OSSEC_alert",
+        "OSSEC_alert_level",
+        "Login_attempt",
+        "Succesful_login",
+        "File_activity",
+        "Process_activity",
+        "read_write_physical.process",
+        "is_privileged"
+      ]
+    }
+  },
+  "strict_extra": [],
+  "distinct_vectors_by_setting_and_class": {
+    "common": {
+      "BruteForce": 47241,
+      "C&C": 2856,
+      "Dictionary": 2435,
+      "Discovering_resources": 23148,
+      "Exfiltration": 22134,
+      "Fake_notification": 28,
+      "False_data_injection": 5093,
+      "Generic_scanning": 50253,
+      "MQTT_cloud_broker_subscription": 20816,
+      "MitM": 117,
+      "Modbus_register_reading": 5953,
+      "Normal": 416324,
+      "RDOS": 140699,
+      "Reverse_shell": 1016,
+      "Scanning_vulnerability": 52825,
+      "TCP Relay": 2117,
+      "crypto-ransomware": 458,
+      "fuzzing": 1146,
+      "insider_malcious": 14744
+    },
+    "grouped": {
+      "BruteForce": 47241,
+      "C&C": 2856,
+      "Dictionary": 2435,
+      "Discovering_resources": 23148,
+      "Exfiltration": 22134,
+      "Fake_notification": 28,
+      "False_data_injection": 5093,
+      "Generic_scanning": 50253,
+      "MQTT_cloud_broker_subscription": 20816,
+      "MitM": 117,
+      "Modbus_register_reading": 5953,
+      "Normal": 416324,
+      "RDOS": 140699,
+      "Reverse_shell": 1016,
+      "Scanning_vulnerability": 52825,
+      "TCP Relay": 2117,
+      "crypto-ransomware": 458,
+      "fuzzing": 1146,
+      "insider_malcious": 14744
+    },
+    "strict": {
+      "BruteForce": 46990,
+      "C&C": 2849,
+      "Dictionary": 2093,
+      "Discovering_resources": 22753,
+      "Exfiltration": 22133,
+      "Fake_notification": 28,
+      "False_data_injection": 5073,
+      "Generic_scanning": 37946,
+      "MQTT_cloud_broker_subscription": 20806,
+      "MitM": 112,
+      "Modbus_register_reading": 5953,
+      "Normal": 406194,
+      "RDOS": 77134,
+      "Reverse_shell": 1015,
+      "Scanning_vulnerability": 31615,
+      "TCP Relay": 2116,
+      "crypto-ransomware": 458,
+      "fuzzing": 1145,
+      "insider_malcious": 14736
+    }
+  },
+  "eval_exclude": []
+}

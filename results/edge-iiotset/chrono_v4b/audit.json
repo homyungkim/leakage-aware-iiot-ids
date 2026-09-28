@@ -1,0 +1,492 @@
+{
+  "file": "DNN-EdgeIIoT-dataset.csv",
+  "rows": 2219201,
+  "malformed_frame_time": 122782,
+  "malformed_frame_time_by_class": {
+    "DDoS_UDP": 121568,
+    "MITM": 1214
+  },
+  "columns": 63,
+  "class_counts": {
+    "Normal": 1615643,
+    "DDoS_UDP": 121568,
+    "DDoS_ICMP": 116436,
+    "SQL_injection": 51203,
+    "Password": 50153,
+    "Vulnerability_scanner": 50110,
+    "DDoS_TCP": 50062,
+    "DDoS_HTTP": 49911,
+    "Uploading": 37634,
+    "Backdoor": 24862,
+    "Port_Scanning": 22564,
+    "XSS": 15915,
+    "Ransomware": 10925,
+    "MITM": 1214,
+    "Fingerprinting": 1001
+  },
+  "drop_present": [
+    "frame.time",
+    "ip.src_host",
+    "ip.dst_host",
+    "arp.src.proto_ipv4",
+    "arp.dst.proto_ipv4",
+    "http.file_data",
+    "http.request.full_uri",
+    "icmp.transmit_timestamp",
+    "http.request.uri.query",
+    "tcp.options",
+    "tcp.payload",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.port",
+    "mqtt.msg"
+  ],
+  "drop_missing": [],
+  "protocol_columns": {
+    "arp": [
+      "arp.opcode",
+      "arp.hw.size"
+    ],
+    "icmp": [
+      "icmp.checksum",
+      "icmp.seq_le",
+      "icmp.unused"
+    ],
+    "tcp": [
+      "tcp.ack",
+      "tcp.ack_raw",
+      "tcp.checksum",
+      "tcp.connection.fin",
+      "tcp.connection.rst",
+      "tcp.connection.syn",
+      "tcp.connection.synack",
+      "tcp.flags",
+      "tcp.flags.ack",
+      "tcp.len",
+      "tcp.seq"
+    ],
+    "udp": [
+      "udp.stream",
+      "udp.time_delta"
+    ],
+    "http": [
+      "http.content_length",
+      "http.request.method",
+      "http.referer",
+      "http.request.version",
+      "http.response",
+      "http.tls_port"
+    ],
+    "dns": [
+      "dns.qry.name",
+      "dns.qry.name.len",
+      "dns.qry.qu",
+      "dns.qry.type",
+      "dns.retransmission",
+      "dns.retransmit_request",
+      "dns.retransmit_request_in"
+    ],
+    "mqtt": [
+      "mqtt.conack.flags",
+      "mqtt.conflag.cleansess",
+      "mqtt.conflags",
+      "mqtt.hdrflags",
+      "mqtt.len",
+      "mqtt.msg_decoded_as",
+      "mqtt.msgtype",
+      "mqtt.proto_len",
+      "mqtt.protoname",
+      "mqtt.topic",
+      "mqtt.topic_len",
+      "mqtt.ver"
+    ],
+    "modbus": [
+      "mbtcp.len",
+      "mbtcp.trans_id",
+      "mbtcp.unit_id"
+    ]
+  },
+  "unassigned_columns": [],
+  "coap_columns": [],
+  "exact_duplicates_all_columns": 815,
+  "duplicates_after_drop": 309530,
+  "feature_vectors_with_conflicting_labels": 1513,
+  "records_in_conflicting_vectors_by_class": {
+    "Port_Scanning": 2590,
+    "Ransomware": 1246,
+    "Uploading": 1048,
+    "XSS": 969,
+    "Backdoor": 837,
+    "Password": 833,
+    "SQL_injection": 768,
+    "DDoS_HTTP": 357,
+    "Fingerprinting": 157,
+    "Vulnerability_scanner": 157,
+    "DDoS_ICMP": 9,
+    "DDoS_TCP": 1
+  },
+  "class_counts_after_dedup": {
+    "Normal": 1363998,
+    "DDoS_UDP": 121567,
+    "DDoS_ICMP": 67939,
+    "SQL_injection": 50826,
+    "DDoS_TCP": 50062,
+    "Vulnerability_scanner": 50026,
+    "Password": 49933,
+    "DDoS_HTTP": 48544,
+    "Uploading": 36807,
+    "Backdoor": 24026,
+    "Port_Scanning": 19977,
+    "XSS": 15066,
+    "Ransomware": 9689,
+    "Fingerprinting": 853,
+    "MITM": 358
+  },
+  "records_with_no_retained_field_by_class": {
+    "Normal": 6026,
+    "Port_Scanning": 844,
+    "MITM": 821,
+    "Ransomware": 729,
+    "XSS": 678,
+    "Backdoor": 503,
+    "Fingerprinting": 68,
+    "Password": 55,
+    "Uploading": 53,
+    "Vulnerability_scanner": 49,
+    "SQL_injection": 42,
+    "DDoS_HTTP": 4,
+    "DDoS_ICMP": 1
+  },
+  "majority_baseline_purity": 0.7280291420200333,
+  "top_purity_columns": {
+    "tcp.ack": 0.8272927959206939,
+    "tcp.flags": 0.7871278897224722,
+    "dns.qry.name.len": 0.7829115073398039,
+    "mqtt.conack.flags": 0.7828092182727027,
+    "mqtt.protoname": 0.7828092182727027,
+    "mqtt.topic": 0.7828092182727027,
+    "udp.stream": 0.7827830827401393,
+    "icmp.seq_le": 0.7815659780254245,
+    "icmp.checksum": 0.7805228097860446,
+    "tcp.len": 0.7788947463524034,
+    "tcp.checksum": 0.7777024253323606,
+    "http.request.version": 0.7614898335031391,
+    "http.request.method": 0.7606350213432672,
+    "http.referer": 0.7507828267921652,
+    "http.content_length": 0.7474491945524538
+  },
+  "frame_time_parse_ratio": 0.944672880014023,
+  "file_order_check": {
+    "per_class": {
+      "Backdoor": {
+        "timed_records": 24862,
+        "segments": 1,
+        "min_segment_spearman": 1.0,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "17:58:23.150209",
+          "21:07:01.118175"
+        ]
+      },
+      "DDoS_HTTP": {
+        "timed_records": 49911,
+        "segments": 100,
+        "min_segment_spearman": 0.9999846195255117,
+        "mean_segment_spearman": 0.9999998245902391,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "11:35:29.350784",
+          "11:39:59.358470"
+        ]
+      },
+      "DDoS_ICMP": {
+        "timed_records": 116436,
+        "segments": 22,
+        "min_segment_spearman": 0.9999999999999998,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "23:17:49.155476",
+          "23:24:32.823654"
+        ]
+      },
+      "DDoS_TCP": {
+        "timed_records": 50062,
+        "segments": 10,
+        "min_segment_spearman": 0.9999999999999998,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "19:02:37.609860",
+          "19:11:25.621227"
+        ]
+      },
+      "DDoS_UDP": {
+        "timed_records": 0
+      },
+      "Fingerprinting": {
+        "timed_records": 1001,
+        "segments": 1,
+        "min_segment_spearman": 1.0,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "22:14:30.939803",
+          "22:28:16.484355"
+        ]
+      },
+      "MITM": {
+        "timed_records": 0
+      },
+      "Normal": {
+        "timed_records": 1615643,
+        "segments": 122,
+        "min_segment_spearman": 0.9972489631508746,
+        "mean_segment_spearman": 0.9999754371681809,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "01:22:47.981993",
+          "23:10:29.988676"
+        ]
+      },
+      "Password": {
+        "timed_records": 50153,
+        "segments": 1,
+        "min_segment_spearman": 0.9999999999999999,
+        "mean_segment_spearman": 0.9999999999999999,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "01:45:35.964143",
+          "20:47:21.605080"
+        ]
+      },
+      "Port_Scanning": {
+        "timed_records": 22564,
+        "segments": 2,
+        "min_segment_spearman": 0.9999999999999998,
+        "mean_segment_spearman": 0.9999999999999999,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "16:03:29.475073",
+          "18:50:09.194016"
+        ]
+      },
+      "Ransomware": {
+        "timed_records": 10925,
+        "segments": 2,
+        "min_segment_spearman": 1.0,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "00:00:01.163427",
+          "23:59:59.358821"
+        ]
+      },
+      "SQL_injection": {
+        "timed_records": 51203,
+        "segments": 12,
+        "min_segment_spearman": 0.9999999999710124,
+        "mean_segment_spearman": 0.9999999999975843,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "21:35:18.238171",
+          "21:43:43.688520"
+        ]
+      },
+      "Uploading": {
+        "timed_records": 37634,
+        "segments": 49,
+        "min_segment_spearman": 0.9997825850610244,
+        "mean_segment_spearman": 0.999993248532368,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "23:08:32.886770",
+          "23:16:58.204631"
+        ]
+      },
+      "Vulnerability_scanner": {
+        "timed_records": 50110,
+        "segments": 1,
+        "min_segment_spearman": 1.0,
+        "mean_segment_spearman": 1.0,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "19:22:15.643171",
+          "19:42:33.064127"
+        ]
+      },
+      "XSS": {
+        "timed_records": 15915,
+        "segments": 1,
+        "min_segment_spearman": 0.9999999999999998,
+        "mean_segment_spearman": 0.9999999999999998,
+        "contiguous_file_blocks": 1,
+        "time_span": [
+          "17:44:47.438207",
+          "19:53:14.731065"
+        ]
+      }
+    },
+    "label_runs_in_file": 15
+  },
+  "frame_time_examples": [
+    "2021 11:44:10.081753000",
+    "2021 11:44:10.162218000",
+    "2021 11:44:10.162271000",
+    "2021 11:44:10.162641000",
+    "2021 11:44:10.166132000"
+  ],
+  "empty_token_spelling_by_class": {
+    "http.request.method": {
+      "0": {
+        "DDoS_HTTP": 49909,
+        "Password": 46847,
+        "SQL_injection": 46824,
+        "Uploading": 35727,
+        "Vulnerability_scanner": 28993,
+        "XSS": 14539
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 1214,
+        "Normal": 1615643,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925
+      }
+    },
+    "http.referer": {
+      "0": {
+        "DDoS_HTTP": 49909,
+        "Vulnerability_scanner": 49925,
+        "XSS": 15532
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 1214,
+        "Normal": 1615643,
+        "Password": 50153,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925,
+        "SQL_injection": 51203,
+        "Uploading": 37634
+      }
+    },
+    "http.request.version": {
+      "0": {
+        "DDoS_HTTP": 49909,
+        "MITM": 1214,
+        "Password": 46847,
+        "SQL_injection": 46824,
+        "Uploading": 35727,
+        "Vulnerability_scanner": 28993,
+        "XSS": 14539
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "Normal": 1615643,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925
+      }
+    },
+    "dns.qry.name.len": {
+      "0": {
+        "Normal": 1613798
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_HTTP": 49911,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 987,
+        "Password": 50153,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925,
+        "SQL_injection": 51203,
+        "Uploading": 37634,
+        "Vulnerability_scanner": 50110,
+        "XSS": 15915
+      }
+    },
+    "mqtt.conack.flags": {
+      "0": {
+        "Normal": 1532586
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_HTTP": 49911,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 1214,
+        "Password": 50153,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925,
+        "SQL_injection": 51203,
+        "Uploading": 37634,
+        "Vulnerability_scanner": 50110,
+        "XSS": 15915
+      },
+      "0x00000000": {
+        "Normal": 83017
+      }
+    },
+    "mqtt.protoname": {
+      "0": {
+        "Normal": 1532608
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_HTTP": 49911,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 1214,
+        "Password": 50153,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925,
+        "SQL_injection": 51203,
+        "Uploading": 37634,
+        "Vulnerability_scanner": 50110,
+        "XSS": 15915
+      }
+    },
+    "mqtt.topic": {
+      "0": {
+        "Normal": 1532627
+      },
+      "0.0": {
+        "Backdoor": 24862,
+        "DDoS_HTTP": 49911,
+        "DDoS_ICMP": 116436,
+        "DDoS_TCP": 50062,
+        "DDoS_UDP": 121568,
+        "Fingerprinting": 1001,
+        "MITM": 1214,
+        "Password": 50153,
+        "Port_Scanning": 22564,
+        "Ransomware": 10925,
+        "SQL_injection": 51203,
+        "Uploading": 37634,
+        "Vulnerability_scanner": 50110,
+        "XSS": 15915
+      }
+    }
+  }
+}

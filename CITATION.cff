@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or the data splits, please cite the paper below."
+title: "Beyond Shortcuts: A Leakage-Aware Audit and Benchmark of Intrusion Detectors for Smart-Factory IIoT Gateways (code and data splits)"
+authors:
+  - family-names: Kim
+    given-names: Ho Myung
+    affiliation: "AI Security Major, Department of AI Software, Kyungwoon University, Gumi, Republic of Korea"
+    orcid: "https://orcid.org/0000-0002-1879-3403"
+version: 1.0.0
+repository-code: "https://github.com/homyungkim/leakage-aware-iiot-ids"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Beyond Shortcuts: A Leakage-Aware Audit and Benchmark of Intrusion Detectors for Smart-Factory IIoT Gateways"
+  authors:
+    - family-names: Kim
+      given-names: Ho Myung
+      orcid: "https://orcid.org/0000-0002-1879-3403"
+  year: 2026
+  notes: "Manuscript under review."

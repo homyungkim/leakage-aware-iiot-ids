@@ -1,0 +1,11 @@
+{
+    "cpu":  "Intel(R) Core(TM) Ultra 7 258V",
+    "physical_cores":  8,
+    "logical_processors":  8,
+    "ram_gb":  31.5,
+    "windows":  "Microsoft Windows 11 Home build 26200",
+    "power_scheme":  "전원 구성표 GUID: ab6534a3-bc02-4c44-94d1-a8535b2eb070  (SAMSUNG MODE)",
+    "on_ac_power":  true,
+    "docker":  "29.8.0",
+    "started":  "2026-09-28T08:37:04"
+}

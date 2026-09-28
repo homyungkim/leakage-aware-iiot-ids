@@ -1,0 +1,15 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,
+random,author,FTTransformer,87.0,2.37,88.93,0.31,0.92,0.0,84.35,1.03,0.05,0.06
+random,author,LightGBM,73.35,4.04,76.32,0.35,0.77,0.01,86.3,1.74,14.7,0.96
+random,author,MLP,83.9,2.34,85.58,0.51,0.91,0.0,81.45,1.02,0.05,0.07
+random,author,PALT,87.33,2.79,89.14,0.38,0.92,0.0,84.32,1.13,0.05,0.06
+random,raw-author,FTTransformer,86.38,2.78,89.08,0.98,0.95,0.01,87.14,2.29,0.0,0.0
+random,raw-author,LightGBM,82.39,5.8,89.12,0.38,0.95,0.01,86.27,4.6,0.0,0.0
+random,raw-author,MLP,81.21,4.01,85.28,0.47,0.94,0.01,82.11,6.26,0.0,0.0
+random,raw-author,PALT,81.01,4.78,89.34,0.48,0.92,0.01,80.84,5.57,0.08,0.06
+random,strict,FTTransformer,54.18,18.6,68.21,3.27,0.36,0.12,60.02,19.99,78.02,3.45
+random,strict,LightGBM,62.11,14.43,77.12,0.59,0.42,0.17,70.2,18.38,65.7,23.48
+random,strict,MLP,55.71,10.64,67.94,0.46,0.4,0.03,59.89,13.85,66.08,22.32
+random,strict,PALT,51.29,15.09,69.04,3.52,0.37,0.05,58.17,20.71,66.08,22.32
