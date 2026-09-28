@@ -8,6 +8,11 @@ authors:
     orcid: "https://orcid.org/0000-0002-1879-3403"
 version: 1.0.0
 repository-code: "https://github.com/homyungkim/leakage-aware-iiot-ids"
+doi: "10.5281/zenodo.23017865"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23017865"
+    description: "Archived release v1.0-submission (Zenodo)"
 license: MIT
 preferred-citation:
   type: article

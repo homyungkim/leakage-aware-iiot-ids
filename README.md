@@ -1,5 +1,7 @@
 # Beyond Shortcuts: A Leakage-Aware Audit and Benchmark of Intrusion Detectors for Smart-Factory IIoT Gateways
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23017865.svg)](https://doi.org/10.5281/zenodo.23017865)
+
 Code, data splits, trained models, and result logs for the paper
 
 > H. M. Kim, "Beyond Shortcuts: A Leakage-Aware Audit and Benchmark of Intrusion Detectors for Smart-Factory IIoT Gateways," manuscript under review, 2026.
@@ -141,6 +143,7 @@ See [edge_bench/README.md](edge_bench/README.md). `results/edge-iiotset/edge_ben
 Code: MIT License (see [LICENSE](LICENSE)). The datasets remain under the terms of their original distributors.
 
 ## Citation
-Repository: https://github.com/homyungkim/leakage-aware-iiot-ids
+Repository: https://github.com/homyungkim/leakage-aware-iiot-ids  
+Archived version (v1.0-submission): https://doi.org/10.5281/zenodo.23017865
 
 See [CITATION.cff](CITATION.cff). The entry will be updated with the publication details.
