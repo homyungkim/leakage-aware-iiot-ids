@@ -3,7 +3,7 @@
 Usage: python paired_tests.py macro_f1_fixed_classes.csv
 With five seeds per split, the smallest two-sided p-value of a per-split test is 0.0625, so runs of
 the random and chronological splits are paired by (split, seed) and pooled (n = 10).
-The runs "main", "robust_b", and "robust_c" use identical split indices and seeds (Table VI, VIII),
+The runs "main", "robust_b", and "robust_c" use identical split indices and seeds (Tables III, VI),
 so their models can be paired directly. Holm's step-down correction is applied within each family.
 """
 import sys
@@ -16,12 +16,13 @@ df = df[(df.features == "strict") & (df.run.isin(["main", "robust_b", "robust_c"
 wide = df.pivot_table(index=["split", "seed"], columns="model", values="macro_f1")
 
 FAMILIES = {
-    "vs LightGBM (Table VI)": [("XGBoost", "LightGBM"), ("RandomForest", "LightGBM"), ("CatBoost", "LightGBM"),
+    "vs LightGBM (Table III)": [("XGBoost", "LightGBM"), ("RandomForest", "LightGBM"), ("CatBoost", "LightGBM"),
                                ("MLP-PLR", "LightGBM"), ("PALT", "LightGBM")],
-    "vs PALT (Table VI)": [("PALT", "FTTransformer"), ("PALT", "MLP"), ("PALT", "CNN1D"), ("PALT-Teacher", "PALT"),
+    # PALT-Teacher and PALT-KD are auxiliary runs of notebook 01; they stay in this pre-specified family.
+    "vs PALT (Table III)": [("PALT", "FTTransformer"), ("PALT", "MLP"), ("PALT", "CNN1D"), ("PALT-Teacher", "PALT"),
                            ("PALT-KD", "PALT"), ("MLP-PLR", "PALT"), ("LightGBM", "PALT")],
-    "value resolution (Sec. VI-E)": [("MLP-PLR", "MLP"), ("MLP-PLR", "FTTransformer"), ("PALT-PLR", "PALT")],
-    "PALT controls and variants (Table VIII)": [("PALT-RandGroup", "PALT"), ("PALT-NoLocal", "PALT"),
+    "value resolution (Sec. V-D)": [("MLP-PLR", "MLP"), ("MLP-PLR", "FTTransformer"), ("PALT-PLR", "PALT")],
+    "PALT controls and variants (Table VI)": [("PALT-RandGroup", "PALT"), ("PALT-NoLocal", "PALT"),
                                                 ("PALT-FullAttn", "PALT"), ("PALT-ZeroAbsent", "PALT"),
                                                 ("PALT-PLR", "PALT"), ("PALT-PLR-RandGroup", "PALT"),
                                                 ("PALT-PLR", "PALT-PLR-RandGroup"), ("PALT-PLR", "MLP-PLR"),

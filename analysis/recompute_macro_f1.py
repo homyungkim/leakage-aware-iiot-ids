@@ -12,7 +12,7 @@ Writes macro_f1_fixed_classes.csv next to this script and prints mean ± std per
 import json, sys, os
 import pandas as pd
 
-EXCLUDE = ["Fingerprinting"]      # < 10 distinct test vectors in at least one setting (see paper, Sec. VI-A)
+EXCLUDE = ["Fingerprinting"]      # < 10 distinct test vectors in at least one setting (see paper, Sec. III-C)
 
 rows = []
 for path in sys.argv[1:]:
