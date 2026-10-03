@@ -21,6 +21,14 @@
 #   (ONNX FP32, XGBoost JSON, LightGBM text; random forest via skl2onnx) with 2,000 real test inputs.
 #   (8) **tcp.seq / tcp.ack removed** (strict-noseq) for XGBoost, random forest, MLP-PLR, PALT-PLR; 3 seeds.
 #   Two zips: `palt_v5_robust_d_results.zip` (logs) and `palt_v5_robust_d_models.zip` (models for Docker).
+# * `"robust_e"` (≈6–7 h) — reviewer checks. (9) **session-grouped split** for random forest, XGBoost, MLP-PLR,
+#   PALT-PLR (5 seeds). (10) **tcp.seq / tcp.ack interventions that keep the split fixed** (grouped random split,
+#   3 seeds; LightGBM, XGBoost, random forest, MLP, MLP-PLR, PALT, PALT-PLR): (a) the two fields permuted across the
+#   test vectors of each model trained normally; (b) the two fields coarsened to 16 quantile bins (fit on training)
+#   before training and testing. (11) **vector-level oracle**: majority label of each test vector, scored with the
+#   same fixed-class macro-F1 on distinct test vectors.
+#   `"robust_e_cpu"` (Accelerator None, ≈4 h) runs the tree ensembles and the oracle; `"robust_e_gpu"` (GPU, ≈3.5 h)
+#   runs MLP, MLP-PLR, PALT, PALT-PLR. Together they equal `"robust_e"`.
 #
 # **How to run:** Add Input → "Edge-IIoTset Cyber Security Dataset of IoT & IIoT"; GPU T4 x2; Internet ON;
 # Save Version → Save & Run All. Download `palt_v5_<stage>_results.zip` from the Output tab.
@@ -57,7 +65,7 @@ CFG = dict(
     cat_vocab=64, latency_iters=2000, latency_threads=[1, 2],
     models=["LightGBM", "MLP", "CNN1D", "FTTransformer", "PALT-Teacher", "PALT", "PALT-KD"],
 )
-STAGE = "robust_a"   # "robust_a", "robust_b", "robust_c" or "robust_d"  <-- set before running
+STAGE = "robust_a"   # "robust_a", "robust_b", "robust_c", "robust_d" or "robust_e"  <-- set before running
 S5, S3 = [0, 1, 2, 3, 4], [0, 1, 2]
 BASE4 = ["LightGBM", "MLP", "FTTransformer", "PALT"]
 if STAGE == "robust_a":
@@ -72,6 +80,15 @@ elif STAGE == "robust_d":
     CFG["runs"] = [dict(mode="random", fset="strict", seeds=[0], export=True,
                         models=["LightGBM", "XGBoost", "RandomForest", "PALT", "MLP-PLR", "PALT-PLR"]),
                    dict(mode="random", fset="strict-noseq", seeds=S3, models=["XGBoost", "RandomForest", "MLP-PLR", "PALT-PLR"])]
+elif STAGE in ("robust_e", "robust_e_cpu", "robust_e_gpu"):
+    # robust_e_cpu: tree ensembles and the oracle only (runs without a GPU); robust_e_gpu: the neural detectors
+    TREE3 = ["LightGBM", "XGBoost", "RandomForest"]; NN4 = ["MLP", "MLP-PLR", "PALT", "PALT-PLR"]
+    SESS = {"robust_e": ["XGBoost", "RandomForest", "MLP-PLR", "PALT-PLR"], "robust_e_cpu": ["XGBoost", "RandomForest"],
+            "robust_e_gpu": ["MLP-PLR", "PALT-PLR"]}[STAGE]
+    SEQ = {"robust_e": TREE3 + NN4, "robust_e_cpu": TREE3, "robust_e_gpu": NN4}[STAGE]
+    CFG["runs"] = [dict(mode="session", fset="strict", seeds=S5, models=SESS),
+                   dict(mode="random", fset="strict", seeds=S3, models=SEQ, permute_seq=True, oracle=(STAGE != "robust_e_gpu")),
+                   dict(mode="random", fset="strict", seeds=S3, models=SEQ, coarse=16)]
 else:
     NEW = ["XGBoost", "CatBoost", "RandomForest", "MLP-PLR", "PALT-RandGroup", "PALT-NoLocal", "PALT-FullAttn", "PALT-ZeroAbsent"]
     CFG["runs"] = [dict(mode="random", fset="strict", seeds=S5, models=NEW),
@@ -869,12 +886,30 @@ for run in CFG["runs"]:
                           test_unique_counts={classes[k]: int((y_all[te_u] == k).sum()) for k in range(len(classes))},
                           test_novel_counts=({classes[k]: int((y_all[te_n] == k).sum()) for k in range(len(classes))} if te_n is not None else None),
                           train_counts={classes[k]: int((y_all[tr] == k).sum()) for k in range(len(classes))})
-        tag = f"{mode}{'-w' if weighted else ''}-{fset}_s{seed}"
+        coarse = run.get("coarse")
+        if coarse:   # quantile-bin tcp.seq and tcp.ack (edges and scaling from the training vectors); split unchanged
+            for c in ("tcp.seq", "tcp.ack"):
+                j = num_cols.index(c)
+                edges = np.unique(np.quantile(data["train"][0][:, j], np.linspace(0, 1, coarse + 1)[1:-1]))
+                btr = np.digitize(data["train"][0][:, j], edges).astype(np.float32)
+                mu_, sd_ = btr.mean(), btr.std() + 1e-6
+                for k_ in list(data):
+                    Xk = data[k_][0].copy()
+                    Xk[:, j] = (np.digitize(Xk[:, j], edges).astype(np.float32) - mu_) / sd_
+                    data[k_] = (Xk,) + tuple(data[k_][1:])
+            split_info["coarse_bins"] = int(coarse)
+        tag = f"{mode}{'-w' if weighted else ''}{'-coarse' if coarse else ''}-{fset}_s{seed}"
         np.savez_compressed(os.path.join(CFG["out_dir"], f"split_{tag}.npz"),
                             train=df["_row"].values[tr], val=df["_row"].values[va], test=df["_row"].values[te], test_unique=df["_row"].values[te_u],
                             **({"test_novel": df["_row"].values[te_n]} if te_n is not None else {}))
         print(f"\n=== {tag}: {how} | train {len(tr)} val {len(va)} test {len(te)} test_u {len(te_u)}" + (f" test_novel {len(te_n)}" if te_n is not None else ""))
         evals = [("test", "test"), ("test_unique", "test_u")] + ([("test_novel", "test_n")] if te_n is not None else [])
+        if run.get("permute_seq"):   # test vectors unchanged except tcp.seq / tcp.ack, each permuted across the test vectors
+            Xp = data["test_u"][0].copy(); rp = np.random.default_rng(10_000 + seed)
+            for c in ("tcp.seq", "tcp.ack"):
+                j = num_cols.index(c); Xp[:, j] = Xp[rp.permutation(len(Xp)), j]
+            data["test_u_perm"] = (Xp,) + tuple(data["test_u"][1:])
+            evals.append(("test_unique_permseq", "test_u_perm"))
         dl = {k: loaders(*data[k], 8192, False) for _, k in evals}
         do_export = bool(run.get("export")) and seed == run["seeds"][0]
         if do_export:   # 2,000 real test records for the Docker edge benchmark (inputs only, no labels)
@@ -930,6 +965,12 @@ for run in CFG["runs"]:
             extra = f" novelF1={rec['test_novel']['macro_f1']:.4f}" if "test_novel" in rec else ""
             print(f"[{tag}] {name:16s} uniqF1={t['macro_f1']:.4f}{extra} recFPR={rec['test']['normal_fpr']:.4f} ({rec['train_sec']:.0f}s)")
             save_json(ALL, "results.json")
+        if run.get("oracle"):   # majority label of each vector over all records (the information ceiling), per test vector
+            maj_ = GRP["maj"]
+            rec = dict(split=split_info, model="Oracle-majority", train_sec=0.0,
+                       test=metrics(y_all[te], maj_.loc[H[te]].values), test_unique=metrics(y_all[te_u], maj_.loc[H[te_u]].values))
+            ALL.append(rec); save_json(ALL, "results.json")
+            print(f"[{tag}] Oracle-majority  uniqF1={rec['test_unique']['macro_f1']:.4f}")
         del data; gc.collect(); torch.cuda.empty_cache()
 
 # %% [markdown]
@@ -939,11 +980,12 @@ for run in CFG["runs"]:
 rows = []
 for r in ALL:
     t = r["test"]
-    row = dict(split=r["split"]["mode"] + ("-weighted" if r["split"].get("weighted") else ""), features=r["split"]["feature_set"], seed=r["split"]["seed"], model=r["model"],
+    row = dict(split=r["split"]["mode"] + ("-weighted" if r["split"].get("weighted") else "") + ("-coarse" if r["split"].get("coarse_bins") else ""), features=r["split"]["feature_set"], seed=r["split"]["seed"], model=r["model"],
                macro_f1_novel=(round(100 * r["test_novel"]["macro_f1"], 2) if "test_novel" in r else None),
                macro_f1=round(100 * t["macro_f1"], 2), macro_f1_unique=round(100 * r["test_unique"]["macro_f1"], 2), mcc=round(t["mcc"], 4),
                balanced_acc=round(100 * t["balanced_acc"], 2), normal_fpr=round(100 * t["normal_fpr"], 3),
-               params=r.get("params"), flops=r.get("flops_per_sample"))
+               params=r.get("params"), flops=r.get("flops_per_sample"),
+               macro_f1_unique_permseq=(round(100 * r["test_unique_permseq"]["macro_f1"], 2) if "test_unique_permseq" in r else None))
     for prec in ["fp32", "int8_dynamic", "int8_static"]:
         if "onnx" in r and prec in r["onnx"]:
             row[f"{prec}_kb"] = round(r["onnx"][prec]["size_kb"], 1)
@@ -953,8 +995,8 @@ for r in ALL:
     rows.append(row)
 summary = pd.DataFrame(rows)
 summary.to_csv(os.path.join(CFG["out_dir"], "summary.csv"), index=False)
-pcf = pd.DataFrame([{**dict(split=r["split"]["mode"], weighted=r["split"].get("weighted", False), features=r["split"]["feature_set"], seed=r["split"]["seed"], model=r["model"], eval=key),
-                     **{k: round(100 * v, 2) for k, v in r[key]["per_class_f1"].items()}} for r in ALL for key in ("test_unique", "test_novel") if key in r])
+pcf = pd.DataFrame([{**dict(split=r["split"]["mode"] + ("-coarse" if r["split"].get("coarse_bins") else ""), weighted=r["split"].get("weighted", False), features=r["split"]["feature_set"], seed=r["split"]["seed"], model=r["model"], eval=key),
+                     **{k: round(100 * v, 2) for k, v in r[key]["per_class_f1"].items()}} for r in ALL for key in ("test_unique", "test_novel", "test_unique_permseq") if key in r])
 pcf.to_csv(os.path.join(CFG["out_dir"], "per_class_f1.csv"), index=False)
 att = [dict(split=r["split"]["mode"], features=r["split"]["feature_set"], seed=r["split"]["seed"], **a)
        for r in ALL for a in r.get("token_attribution", [])]

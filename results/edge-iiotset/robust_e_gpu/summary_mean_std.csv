@@ -1,0 +1,13 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,macro_f1_novel,macro_f1_novel,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,,,
+random,strict,MLP,55.71,10.64,67.94,0.46,,,0.4,0.03,59.89,13.85,66.08,22.32
+random,strict,MLP-PLR,64.56,13.51,75.04,0.7,,,0.47,0.12,70.84,17.87,53.78,24.43
+random,strict,PALT,51.29,15.09,69.04,3.52,,,0.37,0.05,58.17,20.71,66.08,22.32
+random,strict,PALT-PLR,57.49,23.79,72.52,4.15,,,0.59,0.25,66.11,25.89,26.49,22.9
+random-coarse,strict,MLP,48.36,11.73,64.06,0.8,,,0.33,0.07,51.98,13.16,78.17,3.44
+random-coarse,strict,MLP-PLR,49.64,10.2,67.41,0.65,,,0.37,0.02,55.49,12.64,66.14,22.31
+random-coarse,strict,PALT,48.34,11.03,65.1,1.25,,,0.28,0.19,52.61,13.76,77.24,4.26
+random-coarse,strict,PALT-PLR,47.62,18.79,66.52,1.68,,,0.37,0.18,52.99,18.21,65.79,23.46
+session,strict,MLP-PLR,41.13,1.47,63.35,3.88,56.73,6.93,0.34,0.04,49.41,1.28,74.64,1.14
+session,strict,PALT-PLR,39.94,3.54,64.93,3.32,58.45,5.71,0.35,0.09,50.57,0.68,69.62,11.14

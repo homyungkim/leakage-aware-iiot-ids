@@ -77,12 +77,14 @@ notebooks/   Kaggle notebooks exactly as run for the paper (outputs cleared)
   09_edgeiiotset_robust_c.ipynb          PALT-PLR and PALT-PLR with random grouping (Tables VI, VIII)
   10_ciciot2023_iat_evidence.ipynb       IAT value bands and separability on CICIoT2023 (Sec. VI-I)
   11_edgeiiotset_robust_d.ipynb          model export for the second edge session; tcp.seq/ack removed for XGBoost, RF, MLP-PLR, PALT-PLR (Tables VII, IX)
+  12_edgeiiotset_robust_e_cpu.ipynb      session split for XGBoost/RF; tcp.seq/ack permuted at test and coarsened to 16 bins; vector-level oracle (tree ensembles, CPU)
+  13_edgeiiotset_robust_e_gpu.ipynb      the same interventions for MLP, MLP-PLR, PALT, PALT-PLR (GPU)
 src/         the code of the notebooks as plain Python scripts
   audit_edgeiiotset.py                   stand-alone data audit of Edge-IIoTset
   main_benchmark.py                      notebooks 01-02 (set STAGE = "main" or "ablation")
   chrono_sensitivity.py                  notebook 03
   cross_dataset.py                       notebooks 04-06 (set DATASET and settings)
-  robustness.py                          notebooks 07-09, 11 (set STAGE = "robust_a", "robust_b", "robust_c" or "robust_d")
+  robustness.py                          notebooks 07-09, 11-13 (set STAGE = "robust_a" ... "robust_d", "robust_e_cpu" or "robust_e_gpu")
   ciciot_iat_evidence.py                 notebook 10
 analysis/    recompute_macro_f1.py (fixed 14-class macro-F1), paired_tests.py (Wilcoxon signed-rank, Holm)
 figures/     fig1_arch.py (Fig. 1), fig_results.py (Figs. 2-3, read from results/)
@@ -115,7 +117,7 @@ Outside Kaggle, run the scripts in `src/` with `CFG["data_csv"]` pointing to the
 
 ### 3. Recompute the reported numbers
 ```bash
-python analysis/recompute_macro_f1.py results/edge-iiotset/{main,ablation,robust_a,robust_b,robust_c,robust_d}/results.json
+python analysis/recompute_macro_f1.py results/edge-iiotset/{main,ablation,robust_a,robust_b,robust_c,robust_d,robust_e_cpu,robust_e_gpu}/results.json
 python analysis/paired_tests.py analysis/macro_f1_fixed_classes.csv
 python figures/fig_results.py
 ```

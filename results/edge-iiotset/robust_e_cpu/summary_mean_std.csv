@@ -1,0 +1,12 @@
+,,,macro_f1,macro_f1,macro_f1_unique,macro_f1_unique,macro_f1_novel,macro_f1_novel,mcc,mcc,balanced_acc,balanced_acc,normal_fpr,normal_fpr
+,,,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+split,features,model,,,,,,,,,,,,
+random,strict,LightGBM,62.11,14.43,77.12,0.59,,,0.42,0.17,70.2,18.38,65.7,23.48
+random,strict,Oracle-majority,85.65,14.14,93.38,4.14,,,0.93,0.07,83.07,17.7,0.92,1.59
+random,strict,RandomForest,65.98,19.06,84.34,3.97,,,0.62,0.22,68.95,20.02,25.43,22.03
+random,strict,XGBoost,66.23,20.42,79.58,1.38,,,0.59,0.31,71.7,22.72,37.39,37.51
+random-coarse,strict,LightGBM,51.1,13.3,67.97,0.34,,,0.38,0.16,57.72,14.13,65.76,23.46
+random-coarse,strict,RandomForest,53.46,18.31,70.46,3.32,,,0.43,0.12,57.55,16.51,53.82,24.43
+random-coarse,strict,XGBoost,47.06,12.84,68.29,0.43,,,0.32,0.09,54.65,15.25,78.05,3.45
+session,strict,RandomForest,53.77,2.53,73.97,4.28,71.78,4.2,0.59,0.05,60.43,2.33,24.99,3.43
+session,strict,XGBoost,45.5,1.95,69.58,3.97,65.28,3.38,0.45,0.1,56.35,1.42,49.04,14.49
